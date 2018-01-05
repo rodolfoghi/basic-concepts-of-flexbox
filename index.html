@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flexbox</title>
+  <style>
+    .container {
+      width: 400px;
+      border: 1px dashed;
+      display: flex;
+    }
+
+    .item {
+      box-sizing: border-box;
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      border: solid;
+      margin: 5px;
+      color: #FFF;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px;
+    }
+    .row {
+      flex-direction: row;
+    }
+
+    .row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .col {
+      flex-direction: column;
+    }
+
+    .col-reverse {
+      flex-direction: column-reverse;
+    }
+
+    .nowrap, .wrap {
+      width: 155px;
+    }
+    .nowrap {
+      flex-wrap: nowrap;
+    }
+
+    .wrap {
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+    section {
+      display: flex;
+    }
+
+    code {
+      display: inline-block;
+      background-color: #F4F7F8;
+      margin: 16px;
+      padding: 40px;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>Main Axis - flex-direction: row</h1>
+    <section>
+    <div class="row container">
+      <div class="item">a</div>
+      <div class="item">b</div>
+      <div class="item">c</div>
+    </div>
+    <pre>
+      <code>
+        &lt;!-- HTML --&gt;
+        &lt;div class="row container"&gt;
+          &lt;div class="item"&gt;a&lt;/div&gt;
+          &lt;div class="item"&gt;b&lt;/div&gt;
+          &lt;div class="item"&gt;c&lt;/div&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+    <pre>
+      <code>
+        /* CSS */
+        .row {
+          display: flex;
+          /* Valor padrão, não precisa ser declarado,
+          coloquei aqui para fins didáticos. */
+          flex-direction: row;
+        }
+      </code>
+    </pre>
+  </section>
+  <hr>
+  <h1>Main Axis - flex-direction: row-reverse</h1>
+  <section>
+    <div class="row-reverse container">
+      <div class="item">a</div>
+      <div class="item">b</div>
+      <div class="item">c</div>
+    </div>
+    <pre>
+      <code>
+        &lt;!-- HTML --&gt;
+        &lt;div class="row-reverse container"&gt;
+          &lt;div class="item"&gt;a&lt;/div&gt;
+          &lt;div class="item"&gt;b&lt;/div&gt;
+          &lt;div class="item"&gt;c&lt;/div&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+    <pre>
+      <code>
+        /* CSS */
+        .row-reverse {
+          display: flex;
+          flex-direction: row-reverse;
+        }
+      </code>
+    </pre>
+  </section>
+  <hr>
+  <h1>Main Axis - flex-direction: column</h1>
+  <section>
+    <div class="col container">
+      <div class="item">a</div>
+      <div class="item">b</div>
+      <div class="item">c</div>
+    </div>
+    <pre>
+      <code>
+        &lt;!-- HTML --&gt;
+        &lt;div class="col container"&gt;
+          &lt;div class="item"&gt;a&lt;/div&gt;
+          &lt;div class="item"&gt;b&lt;/div&gt;
+          &lt;div class="item"&gt;c&lt;/div&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+    <pre>
+      <code>
+        /* CSS */
+        .col {
+          display: flex;
+          flex-direction: column;
+        }
+      </code>
+    </pre>
+  </section>
+  <hr>
+  <h1>Main Axis - flex-direction: column-reverse</h1>
+  <section>
+    <div class="col-reverse container">
+      <div class="item">a</div>
+      <div class="item">b</div>
+      <div class="item">c</div>
+    </div>
+    <pre>
+      <code>
+        &lt;!-- HTML --&gt;
+        &lt;div class="col-reverse container"&gt;
+          &lt;div class="item"&gt;a&lt;/div&gt;
+          &lt;div class="item"&gt;b&lt;/div&gt;
+          &lt;div class="item"&gt;c&lt;/div&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+    <pre>
+      <code>
+        /* CSS */
+        .col {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+      </code>
+    </pre>
+  </section>
+  <hr>
+  <h1>flex-wrap: nowrap</h1>
+  <section>
+    <div class="nowrap container">
+      <div class="item">a</div>
+      <div class="item">b</div>
+      <div class="item">c</div>
+    </div>
+    <pre>
+      <code>
+        &lt;!-- HTML --&gt;
+        &lt;div class="nowrap container"&gt;
+          &lt;div class="item"&gt;a&lt;/div&gt;
+          &lt;div class="item"&gt;b&lt;/div&gt;
+          &lt;div class="item"&gt;c&lt;/div&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+    <pre>
+      <code>
+        /* CSS */
+        .nowrap {
+          display: flex;
+          flex-wrap: nowrap;
+        }
+      </code>
+    </pre>
+  </section>
+  <hr>
+  <h1>flex-wrap: wrap</h1>
+  <section>
+    <div class="wrap container">
+      <div class="item">a</div>
+      <div class="item">b</div>
+      <div class="item">c</div>
+    </div>
+    <pre>
+      <code>
+        &lt;!-- HTML --&gt;
+        &lt;div class="wrap container"&gt;
+          &lt;div class="item"&gt;a&lt;/div&gt;
+          &lt;div class="item"&gt;b&lt;/div&gt;
+          &lt;div class="item"&gt;c&lt;/div&gt;
+        &lt;/div&gt;
+      </code>
+    </pre>
+    <pre>
+      <code>
+        /* CSS */
+        .wrap {
+          display: flex;
+          flex-wrap: wrap;
+          align-content: flex-start;
+        }
+      </code>
+    </pre>
+  </section>
+</body>
+</html>
